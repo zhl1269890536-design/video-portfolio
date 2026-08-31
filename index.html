@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>甄宏林 · 视频作品集</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top-nav" id="top-nav">
+    <a class="nav-brand" href="#top">甄宏林</a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="top-menu" id="top-menu" aria-label="主导航">
+      <a href="#top">首页</a>
+      <a href="#section-long-form">纪实长视频</a>
+      <a href="#section-short-form">短视频</a>
+    </nav>
+  </header>
+
+  <main id="portfolio">
+    <section class="hero page-section" id="top">
+      <p class="eyebrow reveal" id="site-eyebrow">VIDEO PORTFOLIO</p>
+      <h1 class="site-name reveal" id="site-name">你的名字</h1>
+      <p class="hero-subtitle reveal" id="site-role"></p>
+    </section>
+
+    <div id="sections"></div>
+
+    <p class="legal-note">本页面仅用于作品展示，版权归属客户及创作者共同所有，未经书面授权，禁止录制、转载、截取、商用，违者将追究法律责任。</p>
+  </main>
+
+  <div class="detail-overlay" id="detail-overlay" hidden>
+    <div class="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+      <button class="detail-close" id="detail-close" type="button" aria-label="关闭">×</button>
+      <div class="detail-media" id="detail-media"></div>
+      <div class="detail-info">
+        <p class="detail-category" id="detail-category"></p>
+        <h2 class="detail-title" id="detail-title"></h2>
+
+        <div class="detail-nav">
+          <button type="button" class="detail-nav-btn" id="detail-prev">← 上一个</button>
+          <span class="detail-counter" id="detail-counter"></span>
+          <button type="button" class="detail-nav-btn" id="detail-next">下一个 →</button>
+        </div>
+
+        <section class="info-block">
+          <h3>我的角色</h3>
+          <div class="role-list" id="detail-role"></div>
+        </section>
+
+        <section class="info-block" id="detail-note-block" hidden>
+          <h3>视频简介</h3>
+          <p class="detail-note" id="detail-note"></p>
+        </section>
+
+        <div class="detail-actions" id="detail-actions"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="works.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
