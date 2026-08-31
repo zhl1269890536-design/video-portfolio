@@ -14,6 +14,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 html,
@@ -33,6 +34,15 @@ body {
 
 button {
   font-family: inherit;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.work-card,
+.subnav-item,
+.detail-nav-btn {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #portfolio {
@@ -583,20 +593,30 @@ button {
 }
 
 @media (max-width: 900px) {
+  .top-nav {
+    padding: 14px 24px;
+  }
+
+  .nav-brand {
+    font-size: 14px;
+  }
+
   .nav-toggle {
     display: block;
+    width: 36px;
+    height: 36px;
   }
 
   .top-menu {
     position: fixed;
-    top: 60px;
+    top: 54px;
     left: 0;
     right: 0;
     display: none;
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
-    padding: 12px 40px 20px;
+    padding: 8px 24px 18px;
     border-bottom: 1px solid var(--line);
     background: rgba(250, 250, 250, 0.96);
   }
@@ -607,8 +627,8 @@ button {
 
   .top-menu a {
     width: 100%;
-    padding: 13px 0;
-    font-size: 15px;
+    padding: 14px 0;
+    font-size: 16px;
   }
 
   .site-name {
@@ -637,45 +657,77 @@ button {
 
 @media (max-width: 600px) {
   .hero {
-    padding: 100px 20px 60px;
+    padding: 92px 20px 56px;
   }
 
   .site-name {
-    font-size: 48px;
+    font-size: 44px;
+  }
+
+  .eyebrow {
+    margin-bottom: 18px;
   }
 
   .hero-subtitle {
     font-size: 16px;
+    margin-top: 18px;
   }
 
   .category-section {
-    padding: 80px 20px 120px;
+    padding: 72px 20px 96px;
   }
 
   .section-title {
-    font-size: 32px;
+    font-size: 34px;
+  }
+
+  .section-head {
+    margin-bottom: 48px;
   }
 
   .group-block {
-    margin-top: 72px;
+    margin-top: 64px;
+  }
+
+  .group-head {
+    margin-bottom: 28px;
   }
 
   .group-title {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .group-subnav {
-    top: 58px;
-    margin-bottom: 34px;
+    top: 52px;
+    margin-bottom: 28px;
+    padding: 8px 0;
+  }
+
+  .subnav-item {
+    padding: 8px 12px;
+    font-size: 12px;
   }
 
   .detail-nav {
-    margin-top: -2px;
+    margin-top: -4px;
+    padding-bottom: 14px;
+  }
+
+  .detail-nav-btn {
+    min-height: 44px;
   }
 
   .works-row {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
+  }
+
+  .work-body {
+    padding-top: 18px;
+  }
+
+  .work-title {
+    font-size: 17px;
   }
 
   .detail-overlay {
@@ -684,15 +736,30 @@ button {
 
   .detail-panel {
     width: 100%;
-    max-height: 100vh;
+    max-height: 100dvh;
+  }
+
+  .detail-media {
+    height: 44vh;
+    min-height: 220px;
+    aspect-ratio: auto;
+  }
+
+  .detail-close {
+    width: 44px;
+    height: 44px;
   }
 
   .detail-info {
-    padding: 24px 20px 28px;
+    padding: 22px 18px calc(40px + env(safe-area-inset-bottom));
   }
 
   .detail-title {
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  .legal-note {
+    padding: 36px 20px 48px;
   }
 }
 
