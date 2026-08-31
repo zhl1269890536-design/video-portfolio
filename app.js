@@ -90,16 +90,29 @@
     ].join("");
 
     card.addEventListener("click", function () {
-      openDetail(work);
+      openWork(work);
     });
     card.addEventListener("keydown", function (event) {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
-        openDetail(work);
+        openWork(work);
       }
     });
 
     return card;
+  }
+
+  function shouldUsePlayerPage() {
+    return /MicroMessenger/i.test(navigator.userAgent) ||
+      /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  }
+
+  function openWork(work) {
+    if (shouldUsePlayerPage()) {
+      window.location.href = "player.html?id=" + encodeURIComponent(work.id);
+      return;
+    }
+    openDetail(work);
   }
 
   function worksFor(categoryId) {
