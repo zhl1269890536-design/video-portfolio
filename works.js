@@ -29,7 +29,7 @@ window.PORTFOLIO = {
       results: ["待补充"],
       note: "辞去北漂工作，深耕非遗纪实创作，亲身沉浸式学习铸剑、泥塑、复刻曾侯乙编钟等传统技艺，用短视频镜头记录匠心、传播古老非遗文化",
       cover: "covers/jinyi-wawa.jpg",
-      video: "https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/jinyi-wawa.mp4",
+      video: "https://ghfast.top/https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/jinyi-wawa.mp4",
       bilibiliEmbed: "",
       bilibiliPage: "",
       feishu: ""
@@ -43,7 +43,7 @@ window.PORTFOLIO = {
       results: ["待补充"],
       note: "乡村生活类创作者，擅长就地取材手工打造各类器物，用视频展示淳朴自在的山野田园日常",
       cover: "covers/shancun-xiaojie.jpg",
-      video: "https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/shancun-xiaojie.mp4",
+      video: "https://ghfast.top/https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/shancun-xiaojie.mp4",
       bilibiliEmbed: "",
       bilibiliPage: "",
       feishu: ""
@@ -57,7 +57,7 @@ window.PORTFOLIO = {
       results: ["待补充"],
       note: "陕西省榆林市佳县高家下坬村的村民高红艳是当地的明星网红，也被人称为“枣妹子”，家住大山深处的她用直播帮助当地枣农找销路，让滞销在农民家中的枣子成功走出山村、走向市场。",
       cover: "covers/zaomeizi.jpg",
-      video: "https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/zaomeizi.mp4",
+      video: "https://ghfast.top/https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/zaomeizi.mp4",
       bilibiliEmbed: "",
       bilibiliPage: "",
       feishu: ""
@@ -71,7 +71,7 @@ window.PORTFOLIO = {
       results: ["待补充"],
       note: "范胜男，32岁，是河南省安阳市一家民营剧团的团长。2024年8月，范胜男参加了一场为期一个月的豫剧表演人才培训项目。范胜男是豫剧崔派艺术传承人，她肩负传承使命，也承担带团责任。",
       cover: "covers/yuju-jiejie.jpg",
-      video: "https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/yuju-jiejie.mp4",
+      video: "https://ghfast.top/https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/yuju-jiejie.mp4",
       bilibiliEmbed: "",
       bilibiliPage: "",
       feishu: ""
@@ -85,7 +85,7 @@ window.PORTFOLIO = {
       results: ["待补充"],
       note: "赵丽杰通过规模机械化耕作，让抛荒的土地重新焕发出生机。",
       cover: "covers/nongjishou.jpg",
-      video: "https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/nongjishou.mp4",
+      video: "https://ghfast.top/https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/nongjishou.mp4",
       bilibiliEmbed: "",
       bilibiliPage: "",
       feishu: ""
@@ -99,7 +99,7 @@ window.PORTFOLIO = {
       results: ["待补充"],
       note: "",
       cover: "covers/hotpot.jpg",
-      video: "https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/hotpot.mp4",
+      video: "https://ghfast.top/https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/hotpot.mp4",
       bilibiliEmbed: "",
       bilibiliPage: "",
       feishu: ""
@@ -113,7 +113,7 @@ window.PORTFOLIO = {
       results: ["待补充"],
       note: "",
       cover: "covers/yanbian-travel.jpg",
-      video: "https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/yanbian-travel.mp4",
+      video: "https://ghfast.top/https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/yanbian-travel.mp4",
       bilibiliEmbed: "",
       bilibiliPage: "",
       feishu: ""
@@ -127,7 +127,7 @@ window.PORTFOLIO = {
       results: ["待补充"],
       note: "",
       cover: "covers/shaola.jpg",
-      video: "https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/shaola.mp4",
+      video: "https://ghfast.top/https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/shaola.mp4",
       bilibiliEmbed: "",
       bilibiliPage: "",
       feishu: ""
@@ -141,7 +141,7 @@ window.PORTFOLIO = {
       results: ["待补充"],
       note: "",
       cover: "covers/sanya-hotel.jpg",
-      video: "https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/sanya-hotel.mp4",
+      video: "https://ghfast.top/https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/sanya-hotel.mp4",
       bilibiliEmbed: "",
       bilibiliPage: "",
       feishu: ""
@@ -155,7 +155,7 @@ window.PORTFOLIO = {
       results: ["待补充"],
       note: "",
       cover: "covers/yikao-xianchang.jpg",
-      video: "https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/yikao-xianchang.mp4",
+      video: "https://ghfast.top/https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/yikao-xianchang.mp4",
       bilibiliEmbed: "",
       bilibiliPage: "",
       feishu: ""
@@ -169,7 +169,7 @@ window.PORTFOLIO = {
       results: ["待补充"],
       note: "",
       cover: "covers/wedding-7628.jpg",
-      video: "https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/wedding-7628.mp4",
+      video: "https://ghfast.top/https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/wedding-7628.mp4",
       bilibiliEmbed: "",
       bilibiliPage: "",
       feishu: ""
