@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>视频播放</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="player-body">
+  <header class="player-top">
+    <a class="player-back" href="./">← 返回作品集</a>
+    <h1 class="player-title" id="player-title"></h1>
+  </header>
+
+  <main class="player-main">
+    <div class="player-video-wrap">
+      <video
+        id="player-video"
+        controls
+        playsinline
+        webkit-playsinline
+        x5-playsinline
+        x5-video-player-type="h5"
+        x5-video-player-fullscreen="true"
+        preload="metadata"
+        controlslist="nodownload"
+      ></video>
+    </div>
+
+    <section class="player-meta">
+      <p class="player-category" id="player-category"></p>
+      <div class="role-list" id="player-role"></div>
+      <p class="player-note" id="player-note" hidden></p>
+    </section>
+  </main>
+
+  <p class="legal-note">本页面仅用于作品展示，版权归属客户及创作者共同所有，未经书面授权，禁止录制、转载、截取、商用，违者将追究法律责任。</p>
+
+  <script src="works.js"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      var data = window.PORTFOLIO || { categories: [], works: [] };
+      var id = new URLSearchParams(window.location.search).get("id");
+      var work = null;
+
+      for (var i = 0; i < data.works.length; i++) {
+        if (data.works[i].id === id) {
+          work = data.works[i];
+          break;
+        }
+      }
+
+      if (!work) {
+        window.location.href = "./";
+        return;
+      }
+
+      var categoryName = work.category;
+      for (var j = 0; j < data.categories.length; j++) {
+        if (data.categories[j].id === work.category) {
+          categoryName = data.categories[j].name;
+          break;
+        }
+      }
+
+      document.getElementById("player-title").textContent = work.title;
+      document.getElementById("player-category").textContent = categoryName;
+
+      var roleEl = document.getElementById("player-role");
+      roleEl.innerHTML = "";
+      (work.role || []).forEach(function (role) {
+        var chip = document.createElement("span");
+        chip.className = "role-chip";
+        chip.textContent = role;
+        roleEl.appendChild(chip);
+      });
+
+      var noteEl = document.getElementById("player-note");
+      if (work.note && work.note !== "待补充") {
+        noteEl.textContent = work.note;
+        noteEl.hidden = false;
+      }
+
+      var video = document.getElementById("player-video");
+      video.src = work.video;
+      video.poster = work.cover;
+
+      document.addEventListener("contextmenu", function (event) {
+        event.preventDefault();
+      });
+    })();
+  </script>
+</body>
+</html>
