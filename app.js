@@ -34,6 +34,7 @@
   var noteBlockEl = document.getElementById("detail-note-block");
   var actionsEl = document.getElementById("detail-actions");
   var closeBtn = document.getElementById("detail-close");
+  var closeSecondaryBtn = document.getElementById("detail-close-secondary");
   var prevBtn = document.getElementById("detail-prev");
   var nextBtn = document.getElementById("detail-next");
   var counterEl = document.getElementById("detail-counter");
@@ -102,16 +103,7 @@
     return card;
   }
 
-  function shouldUsePlayerPage() {
-    return /MicroMessenger/i.test(navigator.userAgent) ||
-      /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  }
-
   function openWork(work) {
-    if (shouldUsePlayerPage()) {
-      window.location.href = "player.html?id=" + encodeURIComponent(work.id);
-      return;
-    }
     openDetail(work);
   }
 
@@ -314,6 +306,10 @@
       video.playsInline = true;
       video.preload = "metadata";
       video.setAttribute("controlslist", "nodownload");
+      video.setAttribute("webkit-playsinline", "");
+      video.setAttribute("x5-playsinline", "");
+      video.setAttribute("x5-video-player-type", "h5");
+      video.setAttribute("disablepictureinpicture", "");
       mediaEl.appendChild(video);
       return;
     }
@@ -437,6 +433,7 @@
   }
 
   closeBtn.addEventListener("click", closeDetail);
+  closeSecondaryBtn.addEventListener("click", closeDetail);
   prevBtn.addEventListener("click", function () {
     showWork(-1);
   });
