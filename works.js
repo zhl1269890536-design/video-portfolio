@@ -91,6 +91,20 @@ window.PORTFOLIO = {
       feishu: ""
     },
     {
+      id: "tu-shaonian",
+      title: "吃“土”少年创新记",
+      category: "documentary",
+      duration: "待补充",
+      role: ["编导"],
+      results: ["待补充"],
+      note: "炒粸简单来说就是用土炒制的面食小吃，作为山西省运城市垣曲县的非遗小吃，炒粸色泽焦黄，口感清脆，香醇可口，味美余长，近年来深受消费者欢迎。返乡创业青年鲁泽遭遇父亲反对，他立志要在炒粸上走出创新之路",
+      cover: "covers/tu-shaonian.jpg",
+      video: "https://ghfast.top/https://github.com/zhl1269890536-design/video-portfolio/releases/download/v1/tu-shaonian.mp4",
+      bilibiliEmbed: "",
+      bilibiliPage: "",
+      feishu: ""
+    },
+    {
       id: "hotpot",
       title: "挑战一天三顿火锅",
       category: "travel-vlog",
