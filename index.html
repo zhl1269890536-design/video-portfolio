@@ -2,13 +2,16 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>甄宏林 · 视频作品集</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260913">
 </head>
 <body>
   <header class="top-nav" id="top-nav">
-    <a class="nav-brand" href="#top">甄宏林</a>
+    <a class="nav-brand" href="#top">
+      <span class="brand-glyph">ZH</span>
+      <span class="brand-name">甄宏林</span>
+    </a>
     <button class="nav-toggle" id="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false">
       <span></span>
       <span></span>
@@ -22,20 +25,46 @@
 
   <main id="portfolio">
     <section class="hero page-section" id="top">
-      <p class="eyebrow reveal" id="site-eyebrow">VIDEO PORTFOLIO</p>
-      <h1 class="site-name reveal" id="site-name">你的名字</h1>
-      <p class="hero-subtitle reveal" id="site-role"></p>
+      <div class="hero-copy">
+        <p class="hero-kicker reveal" id="site-eyebrow">VIDEO PORTFOLIO</p>
+        <h1 class="site-name reveal" id="site-name">你的名字</h1>
+        <p class="hero-subtitle reveal" id="site-role"></p>
+        <div class="hero-note reveal" id="hero-note">
+          <span class="hero-note-line"></span>
+          <span>影像作品精选</span>
+        </div>
+      </div>
     </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marquee-track"></div>
+    </div>
 
     <div id="sections"></div>
 
-    <p class="legal-note">本页面仅用于作品展示，未经授权，禁止录制、转载、截取、商用。</p>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <p class="footer-name">甄宏林</p>
+          <p class="footer-role" id="footer-role"></p>
+        </div>
+        <a class="footer-top" href="#top">
+          <span>回到顶部</span>
+          <span class="footer-arrow">↑</span>
+        </a>
+      </div>
+      <p class="legal-note">作品仅用于个人求职展示，未经授权，禁止录制、转载、截取、商用。</p>
+    </footer>
   </main>
 
   <div class="detail-overlay" id="detail-overlay" hidden>
     <div class="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detail-title">
       <div class="detail-toolbar">
-        <button class="detail-close" id="detail-close" type="button" aria-label="关闭">关闭</button>
+        <span class="detail-toolbar-label">作品详情</span>
+        <button class="detail-close" id="detail-close" type="button" aria-label="关闭">
+          <span class="close-line"></span>
+          <span class="close-label">关闭</span>
+        </button>
       </div>
       <div class="detail-media" id="detail-media"></div>
       <div class="detail-info">
@@ -64,7 +93,7 @@
     </div>
   </div>
 
-  <script src="works.js"></script>
-  <script src="app.js"></script>
+  <script src="works.js?v=20260913"></script>
+  <script src="app.js?v=20260913"></script>
 </body>
 </html>

@@ -68,7 +68,45 @@
     document.getElementById("site-name").textContent = name;
     document.getElementById("site-eyebrow").textContent = tagline;
     roleSubtitleEl.textContent = (data.profile && data.profile.subtitle) || "";
+    var footerRole = document.getElementById("footer-role");
+    if (footerRole) {
+      footerRole.textContent = (data.profile && data.profile.subtitle) || "";
+    }
     document.title = name + " · " + tagline;
+  }
+
+  function renderMarquee() {
+    var track = document.getElementById("marquee-track");
+    if (!track) {
+      return;
+    }
+
+    var labels = [];
+    visibleGroups.forEach(function (group) {
+      labels.push(group.name);
+      (group.categories || []).forEach(function (categoryId) {
+        var category = categoryMap[categoryId];
+        if (category && category.name !== group.name) {
+          labels.push(category.name);
+        }
+      });
+    });
+    if (!labels.length) {
+      labels.push("作品集");
+    }
+
+    var source = [];
+    for (var repeat = 0; repeat < 2; repeat++) {
+      labels.forEach(function (label) {
+        var item = document.createElement("span");
+        item.className = "marquee-item";
+        item.textContent = label;
+        source.push(item);
+      });
+    }
+    source.forEach(function (item) {
+      track.appendChild(item);
+    });
   }
 
   function buildCard(work, index) {
@@ -81,14 +119,23 @@
 
     var coverClass = "work-cover" + (work.cover ? " has-cover" : "");
     var coverStyle = work.cover ? " style=\"background-image:url('" + escapeHtml(work.cover) + "')\"" : "";
+    var category = categoryLabel(work.category);
+    var roles = (work.role || []).join(" / ");
 
     card.innerHTML = [
       '<div class="' + coverClass + '"' + coverStyle + ">",
+      '<span class="work-play-badge">观看作品</span>',
       "</div>",
       '<div class="work-body">',
+      '<div class="work-meta">',
+      '<span class="work-category">' + escapeHtml(category) + "</span>",
+      roles ? '<span class="work-role">' + escapeHtml(roles) + "</span>" : "",
+      "</div>",
       '<h3 class="work-title">' + escapeHtml(work.title) + "</h3>",
       "</div>"
     ].join("");
+
+    bindPreview(card, work);
 
     card.addEventListener("click", function () {
       openWork(work);
@@ -101,6 +148,70 @@
     });
 
     return card;
+  }
+
+  function bindPreview(card, work) {
+    if (!work.video || !window.matchMedia("(hover: hover)").matches) {
+      return;
+    }
+
+    var cover = null;
+    var video = null;
+
+    function getCover() {
+      if (!cover) {
+        cover = card.querySelector(".work-cover");
+      }
+      return cover;
+    }
+
+    function playPreview() {
+      if (!card.classList.contains("is-previewing") || !video) {
+        return;
+      }
+      var attempt = video.play();
+      if (attempt && attempt.catch) {
+        attempt.catch(function () {
+          card.classList.remove("is-previewing");
+        });
+      }
+    }
+
+    card.addEventListener("mouseenter", function () {
+      var coverEl = getCover();
+      if (!coverEl) {
+        return;
+      }
+      if (!video) {
+        video = document.createElement("video");
+        video.className = "work-preview";
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.preload = "metadata";
+        video.setAttribute("muted", "");
+        video.src = work.video;
+        if (work.cover) {
+          video.poster = work.cover;
+        }
+        video.addEventListener("canplay", playPreview, { once: true });
+        video.addEventListener("error", function () {
+          card.classList.remove("is-previewing");
+        });
+        coverEl.appendChild(video);
+      }
+      card.classList.add("is-previewing");
+      if (video.readyState >= 3) {
+        playPreview();
+      }
+    });
+
+    card.addEventListener("mouseleave", function () {
+      card.classList.remove("is-previewing");
+      if (video) {
+        video.pause();
+      }
+    });
   }
 
   function openWork(work) {
@@ -166,6 +277,12 @@
     title.textContent = group.name;
 
     head.appendChild(title);
+
+    var indexLabel = document.createElement("p");
+    indexLabel.className = "section-index";
+    indexLabel.textContent = "0" + (index + 1);
+    head.appendChild(indexLabel);
+
     inner.appendChild(head);
 
     if ((group.categories || []).length > 1) {
@@ -453,6 +570,13 @@
     });
   });
 
+  function updateNavOnScroll() {
+    topNavEl.classList.toggle("is-scrolled", window.scrollY > 50);
+  }
+
+  window.addEventListener("scroll", updateNavOnScroll, { passive: true });
+  updateNavOnScroll();
+
   overlayEl.addEventListener("click", function (event) {
     if (event.target === overlayEl) {
       closeDetail();
@@ -486,6 +610,7 @@
   }
 
   renderProfile();
+  renderMarquee();
   renderSections();
   initReveal();
   initScrollSpy();
